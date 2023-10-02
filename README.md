@@ -7,9 +7,10 @@ The droplet instance is currently a basic type running a regular Intel processor
 
 ### Accessing the Server
 The server can be accessed remotely using any lcoal SSH client. A private key is needed to access the server. This will be provided to whoever requires access. To access the server from a Windows instance, do the following:
-1. Open up Command Prompt via `Win+R` and type `cmd`
-2. Type `ssh root@198.199.121.112 -i <path_to_key_file>`
-3. Connection to the server is established
+1. Download the Key file in this repository. Place it somewhere safe on your computer
+2. Open up Command Prompt via `Win+R` and type `cmd`
+3. Type `ssh root@198.199.121.112 -i <path_to_key_file>`
+4. Connection to the server is established
 
 ### Accessing the PZ Server Console
 Once logged into the VPS, you should be greeted by the Ubuntu Welcome message. You will be logged in as `root`. In order to access the TMUX session setup for administration of the PZ server, do the following:

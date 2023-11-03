@@ -1,9 +1,9 @@
-# Project Zomboid Server on Digital Ocean VPS, Runbook
+# Project Zomboid Server on Vultr VPS Runbook
 
-## This document will outline common practices and procedures used to operate and maintain the PZ server that exists on a Digital Ocean droplet
+## This document will outline common practices and procedures used to operate and maintain the PZ server that exists on a Vultr instance.
 
 ### Architecture
-The droplet instance is currently a basic type running a regular Intel processor. It has 4 Gb of memory, 80 Gb of disk space (SSD), 2 vCPUs, and is running Ubuntu 22.10. The software powering the server is the PZ dedicated server application that is downloaded directly from Steam. Steam is installed on the box. OpenSSH (Secure Shell) is installed. Firewall rules (UFW) restrict access to the box and only allow certain IP addresses to remotely access the server for either SSH or PZ connection. TMUX is used for terminal multiplexing to facilitate administration of the PZ server config.
+The droplet instance is currently a basic type running a regular Intel processor. It has 16 Gb of memory, 80 Gb of disk space (SSD), 4 vCPUs, and is running Ubuntu 22.10. The software powering the server is the PZ dedicated server application that is downloaded directly from Steam. Steam is installed on the box. OpenSSH (Secure Shell) is installed. Firewall rules (UFW) restrict access to the box and only allow certain IP addresses to remotely access the server for either SSH or PZ connection. TMUX is used for terminal multiplexing to facilitate administration of the PZ server config.
 
 ### Accessing the Server
 The server can be accessed remotely using any lcoal SSH client. A private key is needed to access the server. This will be provided to whoever requires access. To access the server from a Windows instance, do the following:

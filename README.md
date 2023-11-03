@@ -9,7 +9,7 @@ The droplet instance is currently a basic type running a regular Intel processor
 The server can be accessed remotely using any lcoal SSH client. A private key is needed to access the server. This will be provided to whoever requires access. To access the server from a Windows instance, do the following:
 1. Download the Key file in this repository. Place it somewhere safe on your computer
 2. Open up Command Prompt via `Win+R` and type `cmd`
-3. Type `ssh root@198.199.121.112 -i <path_to_key_file>`
+3. Type `ssh root@whiteforestinfosec.xyz -i <path_to_key_file>`
 4. Connection to the server is established
 
 ### Accessing the PZ Server Console
@@ -53,7 +53,7 @@ To exit the server and close your remote session, do the following:
  2. type `exit` 
  3. You have closed connection to the server
 
-### Miscellaneous 
+### Miscellaneous - DEFUNCT but leaving for documentation purposes
 Digital Ocean uses a `loopback` address on the network interface. For some reason, this causes a conflict with the PZ server networking setup, preventing players from succesfully establishing connection to the server. I have manually deleted the interface entry from the OS. However, in the event of a VPS restart, the interface will come back online and must be manually deleted again. To delete it, do the following:
  1. Type `ip a sh` to view and confirm presence of loopback (`10.10.0.6/16`)
  2. Type `ip a delete 10.10.0.6/16 dev eth0`

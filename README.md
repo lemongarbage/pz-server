@@ -3,7 +3,7 @@
 ## This document will outline common practices and procedures used to operate and maintain the PZ server that exists on a Vultr instance.
 
 ### Architecture
-The droplet instance is currently a basic type running a regular Intel processor. It has 16 Gb of memory, 80 Gb of disk space (SSD), 4 vCPUs, and is running Ubuntu 22.10. The software powering the server is the PZ dedicated server application that is downloaded directly from Steam. Steam is installed on the box. OpenSSH (Secure Shell) is installed. Firewall rules (UFW) restrict access to the box and only allow certain IP addresses to remotely access the server for either SSH or PZ connection. TMUX is used for terminal multiplexing to facilitate administration of the PZ server config.
+The instance is currently a basic type running an AMD processor. It has 16 Gb of memory, 80 Gb of disk space (SSD), 4 vCPUs, and is running Ubuntu 22.10. The software powering the server is the PZ dedicated server application that is downloaded directly from Steam. Steam is installed on the box. OpenSSH (Secure Shell) is installed. Firewall rules (UFW) restrict access to the box and only allow certain IP addresses to remotely access the server for either SSH or PZ connection. TMUX is used for terminal multiplexing to facilitate administration of the PZ server config.
 
 ### Accessing the Server
 The server can be accessed remotely using any lcoal SSH client. A private key is needed to access the server. This will be provided to whoever requires access. To access the server from a Windows instance, do the following:
@@ -15,8 +15,8 @@ The server can be accessed remotely using any lcoal SSH client. A private key is
 ### Accessing the PZ Server Console
 Once logged into the VPS, you should be greeted by the Ubuntu Welcome message. You will be logged in as `root`. In order to access the TMUX session setup for administration of the PZ server, do the following:
  1. Type `tmux attach -t 0` (alternatively, you can hit the `up` arrow key two times)
- 2. You will enter the TMUX session which has two panes open. The pane on the left is where the configuration files for the server are. The pane on the right is the active PZ Server console which can be used to save, quit, execute events, or interact with the PZ game world in any number of ways.
- 3. To switch between these windows, hit `CTRL+b` simultaenously and use either the `left` or `right` arrow key after hitting `CTRL+b`
+ 2. You will enter the TMUX session which has two panes open. The pane on the top is for system monitoring, the middle pane is where the configuration files for the Zomboid game are. The pane on the bottom is the active PZ Server console which can be used to save, quit, execute events, or interact with the PZ game world in any number of ways.
+ 3. To switch between these windows, hit `CTRL+b` simultaenously and use either the `up` or `down` arrow key after hitting `CTRL+b`
 
 ### Common Server Operations
 #### Rebooting the Server
@@ -31,7 +31,7 @@ To reboot the PZ server, do the following:
 
 #### Editing the Modlist or Other Server Settings
 Most of the server settings can be found in the `two_frank.ini` file located at `/home/pzuser/Zomboid/Server`. You will need to open the file with a text editor and manually edit the values contained within. For a list of server options, see the [PZ Wiki](https://pzwiki.net/wiki/Server_Settings). To edit the settings and mods used by the server, do the following:
- 1. If not already, switch to the left window pane using `CTRL+b` and the `left` arrow key
+ 1. If not already, switch to the middle window pane using `CTRL+b` and the `up/down` arrow key
  2. Type `nano two_frank.ini` and hit `enter` or hit the `up` arrow key a couple of times
  3. You are now in the Nano text editor. Use the arrow keys to navigate. You can edit text like you normally would in Microsoft Word for example. Use `CTRL+up or down arrow` to navigate faster.
  4. For editing mods:
